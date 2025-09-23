@@ -1,0 +1,37 @@
+#custo da viagem de carro ADAPTADO
+
+dias = int(input("Quantas diárias? "))
+val_hotel = float(input("Qual o valor da diária do hotel? "))
+cidade_in = input("De qual cidade você está saindo? ").title()
+cidade_for = input("Para qual cidade você está indo? ").title()
+distancia = float(input("Qual a distância (km)? "))
+passeio = float(input("Quando planeja gastar por dia (R$)? "))
+km_l = float(input("Quantos km/l o veículo faz? "))
+gasolina = float(input("Qual o valor do combustível (R$)? "))
+
+
+def gasto_hotel(dias):
+    return val_hotel * dias
+
+def gasto_gasolina(distancia): #considerando a ida e volta (2)
+    return (2 * distancia * gasolina) / km_l
+
+def gasto_passeio(cidade):
+    return passeio * dias
+
+gastos = gasto_hotel(dias) + gasto_gasolina(distancia) + gasto_passeio(cidade)
+print("--------")
+print(f"Com base nos gastos definidos, uma viagem de {dias} dias para {cidade_for} saindo de {cidade_in} custaria {round(gastos, 2)} reais")
+
+#definindo gastos separadamente
+
+gast_hotel = gasto_hotel(dias)
+gast_gasolina = gasto_gasolina(distancia)
+qtd_combust = ((2 * distancia) / km_l)
+gast_passeio = gasto_passeio(cidade)
+
+print("--------")
+print("Gastos separados:")
+print(f"Hotel: R$ {round(gast_hotel, 2)}.")
+print(f"Combustível: R$ {round(gast_gasolina, 2)}, utilizando {round(qtd_combust, 2)} l.")
+print(f"Passeios: R$ {round(gast_passeio, 2)}.")
