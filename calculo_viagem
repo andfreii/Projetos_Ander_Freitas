@@ -1,4 +1,4 @@
-#custo da viagem de carro ADAPTADO
+#custo da viagem de carro em python ADAPTADO
 
 dias = int(input("Quantas diárias? "))
 val_hotel = float(input("Qual o valor da diária do hotel? "))
